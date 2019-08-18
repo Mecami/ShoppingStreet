@@ -1,0 +1,37 @@
+/* components/my-goods-item/my-goods-item.wxss */
+
+.goods-img {
+  width: 100%;
+  border-radius: 12rpx;
+}
+
+.img-container {
+  height: 548rpx;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 6rpx 0;
+}
+
+.info {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  color: #ff5777;
+  margin-right: 28rpx;
+}
+
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+}

@@ -5,18 +5,11 @@
 <!-- 本周推荐 -->
 <my-popular/>
 <!-- tab-control -->
-<my-tab-control list="{{list}}" bind:handleTab="handleTab"/>
+<my-tab-control class="fixed"  list="{{list}}" bind:handleTab="handleTab"/>
 <!-- 商品列表 -->
-<view>
-    <block wx:for="{{goods[currentType].list}}" wx:key="{{index}}">
-        <view >
-            {{item.title}}
-        </view>
-        <view  >
-            -----------------
-        </view>
-    </block>
-</view>
+<my-goods typeList="{{goods[currentType].list}}"/>
+<!-- 回到顶部 -->
+<my-back-top wx:if="{{isShow}}"/>
 
 
 

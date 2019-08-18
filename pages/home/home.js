@@ -3,7 +3,9 @@ import {
   getMultiData,
   getGoodsData
 } from '../../service/home.js';
+
 const types=['pop','new','sell'];
+const topDistance=2000;
 Page({
 
   /**
@@ -18,7 +20,9 @@ Page({
         'new': { page: 0, list: [] },
         'sell': { page: 0, list: [] }
       },
-      currentType:'pop'
+      currentType:'pop',
+    isShow:false,
+    isfixed:true
   },
  
 
@@ -80,6 +84,7 @@ Page({
    this.setData({
      currentType:types[index]
    })
+   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -120,7 +125,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this._getGoodsData(this.data.currentType);
   },
 
   /**
@@ -128,5 +133,24 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onPageScroll:function(option){
+    const scrollTop=option.scrollTop;
+    console.log(scrollTop);
+    const flag=scrollTop >= topDistance;
+    const flag2=scrollTop>=555;
+    // console.log(option);
+    //这里的if只有经过特点值才执行，其他的都不执行！！！！！
+    if (flag!=this.data.isShow){
+      this.setData({
+        isShow:flag
+      })
+    }
+    if(flag2!=this.data.fixed){
+      this.setData({
+        fixed: flag2
+      })
+    }
   }
+  
 })

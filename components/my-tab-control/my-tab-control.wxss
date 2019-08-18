@@ -1,7 +1,8 @@
 /* components/tabbar/tabbar.wxss */
 .container{
   display: flex;
-   
+  background-color: #fff;
+  
 }
 .item{
   flex: 1;
