@@ -1,0 +1,7 @@
+/* pages/home/childCmps/my-popular/my-popular.wxss */
+.popular{
+  padding:0 12rpx;
+}
+.popular image{
+    width:100%;
+}

@@ -1,0 +1,32 @@
+<!--pages/category/category.wxml-->
+<wxs src="./category.wxs" module="cate"></wxs>
+<text>pages/category/category.wxml</text>
+
+<view>分类页</view>
+<view class="container">
+   <view wx:for="{{items}}" wx:key="index" class="item {{currentIndex==index?'active':''}}" bind:tap="handleClick" 
+   data-name="{{item}}"
+   data-index="{{index}}">
+       {{item}}
+   </view>
+</view>
+<view class="" hover-class="none" hover-stop-propagation="false">
+    {{cate.add(2.666666,3)}}
+</view>
+<!-- 传递给组件的样式名不能有大写！！！！！！ -->
+<my-cmp title="我是页面数据1" content="我是页面数据2" title2="red" 
+title3="orange"
+bind:create='oncreate'
+/>
+<view>当前值：{{count}}</view>
+<text>---------</text>
+<tabbar list="{{items}}" pinkclass="pink" bind:click="click"/>
+<text>-------</text>
+<button bindtap="add" size="mini">使组件中的值增加</button>
+<my-cmp2 id="my-cmp2"/>
+<text>---------</text>
+<mul-slots>
+  <button slot="slot1">哈哈哈</button>
+  <image slot="slot2"  src="//i1.hdslb.com/bfs/archive/0b441a7555dbaf63c0994b1fd04e77421c02ebaf.jpg@160w_100h.jpg"></image>
+  <text slot="slot3">我是文本</text>
+</mul-slots>

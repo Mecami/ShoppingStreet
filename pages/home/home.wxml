@@ -1,0 +1,22 @@
+<!--轮播图-->
+<my-swiper list="{{banners}}"/>
+<!-- 推荐区域 -->
+<my-recommend recommends="{{recommends}}"/>
+<!-- 本周推荐 -->
+<my-popular/>
+<!-- tab-control -->
+<my-tab-control list="{{list}}" bind:handleTab="handleTab"/>
+<!-- 商品列表 -->
+<view>
+    <block wx:for="{{goods[currentType].list}}" wx:key="{{index}}">
+        <view >
+            {{item.title}}
+        </view>
+        <view  >
+            -----------------
+        </view>
+    </block>
+</view>
+
+
+

@@ -1,0 +1,4 @@
+<!--components/my-cmp/my-cmp.wxml-->
+ <view class="title2">我是组件标题{{title}}</view>
+ <view class="title3">我是组件内容--{{content}}</view>
+ <button bindtap="handleclick">+1</button>

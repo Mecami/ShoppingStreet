@@ -1,0 +1,2 @@
+<!--components/my-cmp2/my-cmp2.wxml-->
+<view>当前数字：{{count}}</view>

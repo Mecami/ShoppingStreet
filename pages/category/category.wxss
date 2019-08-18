@@ -1,0 +1,25 @@
+/* pages/category/category.wxss */
+.container{
+    display: flex;
+    background-color: pink;
+}
+.item{
+    flex:1;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.active{
+    color:#fff;
+}
+.red{
+  color:red;
+  font-size: 40rpx;
+}
+.orange{
+  color:orange;
+   font-size: 50rpx;
+}
+.pink{
+  color:#ff5777;
+}

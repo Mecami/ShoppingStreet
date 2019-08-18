@@ -1,0 +1,8 @@
+function add(price,num){
+  var number=num || 2;
+  var pri=parseFloat(price);
+  return pri.toFixed(number);
+}
+module.exports={
+  add:add
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "my-cmp":"/components/my-cmp/my-cmp",
+    "tabbar":"/components/tabbar/tabbar",
+    "my-cmp2": "/components/my-cmp2/my-cmp2",
+    "mul-slots": "/components/mul-slots/mul-slots"
+        
+  },
+  "navigationBarTitleText": "商品分类"
+  
+}
