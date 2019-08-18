@@ -22,7 +22,8 @@ Page({
       },
       currentType:'pop',
     isShow:false,
-    isfixed:true
+    isfixed:false,
+    tabControlTtop:0
   },
  
 
@@ -86,6 +87,15 @@ Page({
    })
    
   },
+  handleLoad(){
+    // console.log('收到recommend的消息了');
+    //获取组件距离顶部的距离
+    wx.createSelectorQuery().select('#tab-control').boundingClientRect(result=>{
+      // console.log(result);
+      this.data.tabControlTtop=result.top;
+
+    }).exec();
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -136,9 +146,9 @@ Page({
   },
   onPageScroll:function(option){
     const scrollTop=option.scrollTop;
-    console.log(scrollTop);
+    // console.log(scrollTop);
     const flag=scrollTop >= topDistance;
-    const flag2=scrollTop>=555;
+    const flag2=scrollTop>=this.data.tabControlTtop;
     // console.log(option);
     //这里的if只有经过特点值才执行，其他的都不执行！！！！！
     if (flag!=this.data.isShow){
@@ -146,9 +156,9 @@ Page({
         isShow:flag
       })
     }
-    if(flag2!=this.data.fixed){
+    if(flag2!=this.data.isfixed){
       this.setData({
-        fixed: flag2
+        isfixed: flag2
       })
     }
   }

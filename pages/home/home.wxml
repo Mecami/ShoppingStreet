@@ -1,11 +1,13 @@
 <!--轮播图-->
 <my-swiper list="{{banners}}"/>
 <!-- 推荐区域 -->
-<my-recommend recommends="{{recommends}}"/>
-<!-- 本周推荐 -->
+<my-recommend recommends="{{recommends}}" bind:handleLoad="handleLoad"/>
+<!-- 本周流行 -->
 <my-popular/>
 <!-- tab-control -->
-<my-tab-control class="fixed"  list="{{list}}" bind:handleTab="handleTab"/>
+<my-tab-control class="{{isfixed?'fixed':''}}"  list="{{list}}"                   bind:handleTab="handleTab" id="tab-control"/>
+<!-- 当上面的tab-control设置为固定定位时用的tab-control -->
+<my-tab-control  list="{{list}}" wx:if="{{isfixed}}"/>
 <!-- 商品列表 -->
 <my-goods typeList="{{goods[currentType].list}}"/>
 <!-- 回到顶部 -->

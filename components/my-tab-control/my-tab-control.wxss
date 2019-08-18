@@ -2,7 +2,7 @@
 .container{
   display: flex;
   background-color: #fff;
-  
+  padding-bottom: 12rpx;
 }
 .item{
   flex: 1;
